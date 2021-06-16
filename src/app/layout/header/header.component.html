@@ -1,0 +1,35 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand text-white" [routerLink]="['/']">
+      <img src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" width="50" height="50" alt=""  style="margin-left: 2rem;" />
+      <b>GITHUB SEARCHER</b>
+    </a>
+    <div class="navbar-nav ml-auto" style="margin-right: 2rem;">
+      <div *ngIf="email" class="navbar-text float-left">
+        <button class="btn btn-primary mt-1">{{ email }}</button>
+      </div>
+      <a *ngIf="email" class="nav-item nav-link " routerLinkActive="active" [routerLink]="['/']"><button class="btn btn-primary mt-1">Home</button></a>
+      <a
+        *ngIf="!email"
+        class="nav-item nav-link "
+        routerLinkActive="active"
+        [routerLink]="['/signin']"
+        ><button class="btn btn-primary mt-1">Sign In</button></a
+      >
+      <a
+        *ngIf="!email"
+        class="nav-item nav-link"
+        routerLinkActive="active"
+        [routerLink]="['/signup']"
+        ><button class="btn btn-primary mt-1">Sign Up</button></a
+      >
+      <a class="nav-item nav-link" routerLinkActive="active" *ngIf="email" (click)="handleSignOut()"><button class="btn btn-primary mt-1">Sign Out</button></a>
+     
+    </div>
+  
+  </div>
+</nav>
