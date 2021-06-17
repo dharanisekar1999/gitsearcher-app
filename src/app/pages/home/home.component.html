@@ -1,20 +1,20 @@
 <div class="container">
-    <form
-    class="form-inline mt-4 d-flex justify-content-center"
-    (ngSubmit)="handleFindUser()"
-  >
-    <div class="form-group">
-      <label for="userName" class="mx-3">USER NAME</label>
-      <input
-        [(ngModel)]="userName"
-        type="text"
-        id="userName"
-        class="form-control-lg  form-control sm-3"
-        name="userName"
-      />
-    </div>
-    <button type="submit" class="btn btn-primary  mx-2 ">Find User</button>
-  </form>
+  <form
+  class="form-inline mt-4 d-flex justify-content-center"
+  (ngSubmit)="handleFindUser()"
+>
+  <div class="form-group">
+    <label for="userName">User Name</label>
+    <input
+      [(ngModel)]="userName"
+      type="text"
+      id="userName"
+      class="form-control form-control-lg "
+      name="userName"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm mx-4 mt-4" style="height: 3rem;">Find User</button>
+</form>
 
     <div *ngIf="error"class="alert alert-danger mt-5" role="alert"> {{error}}</div>
     <div class="row mb-5" style="margin-top: 7rem;">
